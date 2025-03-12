@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonTrack - Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-text">
+                <h1>CarbonTrack</h1>
+                <p>Measure, Reduce, and Offset Your Carbon Footprint</p>
+            </div>
+            <nav class="nav_bar">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#calculator">Calculator</a>
+                <a href="#facts">Facts</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="content-section" id="about">
+        <div class="content-block">
+            <h2>Why Track Your Carbon Footprint?</h2>
+            <p>Tracking your carbon footprint helps you identify the sources of your emissions and take steps to reduce them. This can lead to cost savings, improved health, and a cleaner environment. Understanding your impact is the first step to making conscious decisions that benefit the planet.</p>
+        </div>
+        
+        <div class="content-block">
+            <h2>How Can You Reduce Your Emissions?</h2>
+            <ul>
+                <li>Switch to energy-efficient appliances to reduce energy consumption.</li>
+                <li>Carpool, bike, or use public transport to reduce vehicle emissions.</li>
+                <li>Reduce meat consumption and embrace a plant-based diet.</li>
+                <li>Switch to renewable energy sources such as solar or wind power.</li>
+                <li>Recycle waste materials to minimize landfill contributions.</li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h2>Interesting Facts</h2>
+            <ul>
+                <li>Recycling one aluminum can saves enough energy to power a TV for three hours.</li>
+                <li>By eating one meat-free meal per week, you can save the equivalent of driving 350 miles in emissions.</li>
+                <li>Turning your thermostat down by just 1°C can reduce your energy consumption by up to 10%.</li>
+                <li>LED light bulbs use up to 90% less energy than traditional bulbs.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="calculator" id="calculator">
+        <h2>Carbon Footprint Calculator</h2>
+        <form id="carbonForm">
+            <label for="vehicle">Vehicle Emissions (kg CO₂):</label>
+            <input type="number" id="vehicle" name="vehicle" min="0" required>
+
+            <label for="electricity">Electricity Usage (kWh):</label>
+            <input type="number" id="electricity" name="electricity" min="0" required>
+
+            <label for="flights">Air Travel (km):</label>
+            <input type="number" id="flights" name="flights" min="0" required>
+
+            <label for="diet">Diet Impact (kg CO₂):</label>
+            <input type="number" id="diet" name="diet" min="0" required>
+
+            <button type="button" onclick="calculateFootprint()">Calculate</button>
+        </form>
+        <div id="result"></div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 CarbonTrack | Helping You Build a Greener Future</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a> |
+                <a href="#terms">Terms of Service</a> |
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

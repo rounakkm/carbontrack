@@ -1,0 +1,148 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    background-color: #282828;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header .logo_container img {
+    width: 120px;
+}
+
+header .header-text h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+header .header-text p {
+    color: #ccc;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+nav.nav_bar {
+    display: flex;
+    gap: 20px;
+}
+
+nav.nav_bar a {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+nav.nav_bar a:hover {
+    color: #007bff;
+}
+
+/* Content Section */
+.content-section {
+    background-color: #fff;
+    padding: 40px;
+}
+
+.content-block {
+    margin-bottom: 40px;
+}
+
+.content-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.content-block p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.content-block ul {
+    list-style-type: none;
+}
+
+.content-block ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Calculator Section */
+.calculator {
+    background-color: #e9f5ff;
+    padding: 40px;
+    text-align: center;
+}
+
+.calculator form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+
+.calculator label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.calculator input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.calculator button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calculator button:hover {
+    background-color: #0056b3;
+}
+
+
+footer {
+    background-color: #282828;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .footer-links a {
+    color: #ccc;
+    ma
