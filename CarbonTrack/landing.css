@@ -1,12 +1,12 @@
 /* Navigation Bar */
 header {
     position: fixed;
-    top: 0;
+    top: 0;/*hi hello welcome*/
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.8); /* Slight transparency */
     padding: 15px 20px;
-    z-index: 1000; /* Ensures it's above everything */
+    z-index: 500; /* Ensures it's above everything */
 }
 
 /* Flexbox Navigation */
