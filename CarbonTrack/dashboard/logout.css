@@ -1,0 +1,12 @@
+@import url('styles.css');
+
+.logout-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.logout-container a {
+    color: #16a085;
+    font-weight: bold;
+    text-decoration: none;
+}

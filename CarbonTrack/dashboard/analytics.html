@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <link rel="stylesheet" href="analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>CarbonTrack</h2>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="analytics.html" class="active">Analytics</a></li>
+            <li><a href="insights.html">AI Insights</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Analytics</h1>
+        </header>
+
+        <section class="analytics-overview">
+            <div class="card">
+                <h3>CO₂ Emission Per Sector</h3>
+                <canvas id="sectorChart"></canvas>
+            </div>
+            <div class="card">
+                <h3>Monthly Carbon Footprint</h3>
+                <canvas id="monthlyChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="analytics.js"></script>
+</body>
+</html>
