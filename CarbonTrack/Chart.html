@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Meter</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #35423d, #65c554);
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        #meterContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 350px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.273);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        #carbonChartContainer {
+            width: 300px;
+            height: 150px;
+            position: relative;
+        }
+
+        #carbonChart {
+            width: 100%;
+            height: 100%;
+        }
+
+        #carbonValue {
+            margin-top: 90px;
+            font-size: 36px;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.744);
+        }
+
+        #carbonLabel {
+            margin-top: 0px;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffffff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            #meterContainer {
+                width: 90%;
+                padding: 20px;
+            }
+
+            #carbonChartContainer {
+                width: 280px;
+                height: 140px;
+            }
+
+            #carbonValue {
+                font-size: 30px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="meterContainer">
+        <div id="carbonChartContainer">
+            <canvas id="carbonChart"></canvas>
+        </div>
+        <div id="carbonValue">0 metric tons CO2e</div>
+        <div id="carbonLabel">Your Carbon Footprint</div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('carbonChart').getContext('2d');
+        const carbonValueDisplay = document.getElementById('carbonValue');
+
+        let carbonFootprint = 0;
+        const maxCarbonFootprint = 20;
+
+        const carbonChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Carbon Footprint', 'Remaining'],
+                datasets: [{
+                    data: [carbonFootprint, maxCarbonFootprint - carbonFootprint],
+                    backgroundColor: getCarbonColor(carbonFootprint),
+                    borderWidth: 0,
+                    circumference: 180,
+                    rotation: 270,
+                    cutout: '75%',
+                }]
+            },
+            options: {
+                responsive: false,
+                maintainAspectRatio: false,
+                cutoutPercentage: 75,
+                rotation: 270,
+                circumference: 180,
+                animation: {
+                    animateRotate: true,
+                    animateScale: false,
+                    duration: 1000,
+                    easing: 'easeOutQuart'
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+                elements: {
+                    arc: {
+                        borderWidth: 0
+                    }
+                }
+            }
+        });
+
+        function setCarbonFootprint(value) {
+            if (value < 0 || value > maxCarbonFootprint) {
+                console.error(`Value must be between 0 and ${maxCarbonFootprint} metric tons CO2e`);
+                return;
+            }
+
+            carbonChart.data.datasets[0].data = [value, maxCarbonFootprint - value];
+            carbonChart.data.datasets[0].backgroundColor = getCarbonColor(value);
+            carbonChart.update();
+            carbonValueDisplay.textContent = `${value} metric tons CO2e`;
+        }
+
+        function getCarbonColor(value) {
+            if (value < 2) {
+                return ['rgba(46, 204, 113, 0.8)', 'rgba(236, 240, 241, 0.8)'];
+            } else if (value < 10) {
+                return ['rgba(241, 196, 15, 0.8)', 'rgba(236, 240, 241, 0.8)'];
+            } else {
+                return ['rgba(231, 76, 60, 0.8)', 'rgba(236, 240, 241, 0.8)'];
+            }
+        }
+
+        // Example usage:
+        setCarbonFootprint(1.5);
+        setTimeout(() => setCarbonFootprint(6), 2000);
+        setTimeout(() => setCarbonFootprint(12), 4000);
+    </script>
+</body>
+</html>
