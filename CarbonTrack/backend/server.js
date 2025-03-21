@@ -9,7 +9,7 @@ app.use(express.static('public'));
 app.use(express.json({ limit: '50mb' }));
 
 const openai = new OpenAI({
-    apiKey: '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',
+    apiKey: 'your-key',
 });
 
 app.get('/', (req, res) => {
